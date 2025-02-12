@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-wraper">
+        <div class="cal-screen">
+            <p class="result"></p>
+        </div>
+        <div class="cal-keyboard">
+            <div class="navigator">
+                <div class="history" onclick="openhistory()"><img src="ClockCounterClockwise.png" alt="History icon"></div>
+                <div class="arrow" onclick="back()"><img src="Backspace.png" alt="arrow icon"></div>
+            </div>
+            <div class="board">
+                <div class="row">
+                    <div class="button" style="color: red;">AC</div>
+                    <div class="button" style="color: red;">(</div>
+                    <div class="button" style="color: red;">)</div>
+                    <div class="button" style="color: red; font-size: 30px;">/</div>
+                </div>
+                <div class="row">
+                    <div class="button">7</div>
+                    <div class="button">8</div>
+                    <div class="button">9</div>
+                    <div class="button" style="color: red; font-size: 30px;" >×</div>
+                </div>
+                <div class="row">
+                    <div class="button">4</div>
+                    <div class="button">5</div>
+                    <div class="button">6</div>
+                    <div class="button" style="color: red; font-size: 30px;">+</div>
+                </div>
+                <div class="row">
+                    <div class="button">1</div>
+                    <div class="button">2</div>
+                    <div class="button">3</div>
+                    <div class="button" style="color: red; font-size: 50px;">-</div>
+                </div>
+                <div class="row">
+                    <div class="button">00</div>
+                    <div class="button">0</div>
+                    <div class="button">.</div>
+                    <div class="button" onclick="getresult()" style="color: red;font-size: 30px;">=</div>
+                </div>
+            </div>
+        </div>
+        <div class="history-wraper hide">
+            <div class="history-content">
+                <div class="cros-wraper" onclick="closehistory()">
+                <p class="cross">×</p>
+            </div>
+                <div class="content"></div>
+                <div class="btnwrpaer" onclick="clearhistory()"><button>Clear</button></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script> 
+</body>
+</html>
