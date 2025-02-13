@@ -22,7 +22,7 @@ function getresult(){
         newstr+=expr
         addRecord(newstr)
         str=''
-        if (!expr=="Infinity"){
+        if (expr!="Infinity"){
             str+=expr
         }
         result.innerHTML=expr
