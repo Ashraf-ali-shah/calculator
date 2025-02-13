@@ -108,6 +108,8 @@ transform: translateY(-5px);
 }
 .history-content{
     width: 40%;
+    max-height:80vh;
+    overflow:hidden;
     padding: 20px;
     background-color:#747474;
     border: 2px solid rgb(151, 121, 121);
