@@ -16,6 +16,7 @@ function isoperator(char){
 }
 function getresult(){
     try{
+        if(/[+\-×/]/.test(str){
         let newstr=str+"="
         str=str.replaceAll('×','*')
         const expr = new Function(`return ${str};`)()
@@ -26,6 +27,7 @@ function getresult(){
             str+=expr
         }
         result.innerHTML=expr
+        }
     }
     catch(err){
         result.innerHTML="error"
