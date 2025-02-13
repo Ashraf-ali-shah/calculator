@@ -101,11 +101,22 @@ for (let i=0;i<buttons.length-1;i++){
             }
         }
         else if (this.innerText=='.'){
-            if (str.length==0){
-                str+='0.'
+            if (str[str.length-1]!='.' && !str.includes('.')){
+                str+='.'
             }
-            else
-            str+='.'
+        }
+        else if (this.innerText=='00'){
+            if (str.length==0 ||  (str[0]=='0' && str[1]!='.')){
+                return 
+            }
+            else{
+                str+='00'
+            }
+        }
+        else if (this.innerText=='0'){
+            if (str[0]!='0' || str[1]=='.'){
+                str+='0'
+            }
         }
         else{
             str+=this.innerText
