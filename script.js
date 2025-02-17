@@ -12,7 +12,10 @@ function addRecord(newhis){
     cont.appendChild(el)
 }
 function isoperator(char){
-    return /^[+-/*×]$/.test(char)
+    return /^[\+\-\/\*\×]$/.test(char)
+}
+function isnumber(num){
+    return /^[0-9]$/.test(num)
 }
 function getresult(){
     try{
@@ -103,9 +106,14 @@ for (let i=0;i<buttons.length-1;i++){
             }
         }
         else if (this.innerText=='.'){
-            if (str[str.length-1]!='.' && !str.includes('.')){
-                str+='.'
+            let i=str.length-1
+            while (i>=0 && !isoperator(str[i])){
+                if (str[i]==='.'){
+                    return 
+                }
+                i-=1
             }
+            str+='.'
         }
         else if (this.innerText=='00'){
             if (str.length==0 ||  (str[0]=='0' && str[1]!='.')){
@@ -118,6 +126,15 @@ for (let i=0;i<buttons.length-1;i++){
         else if (this.innerText=='0'){
             if (str[0]!='0' || str[1]=='.'){
                 str+='0'
+            }
+        }
+        else if(isnumber(this.innerText)){
+            if ((str.length==1 && str[0]==='0')||(str[str.length-1]==='0' && isoperator(str[str.length-2]))){
+                str=str.slice(0,-1)
+                str+=this.innerText
+            }
+            else{
+                str+=this.innerText
             }
         }
         else{
